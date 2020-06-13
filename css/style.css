@@ -125,20 +125,8 @@ input::-webkit-inner-spin-button {
     font-size: 30px;
 }
 
-button {
-    position: absolute;
-    width: 200px;
-    left: 50%;
-    transform: translateX(-50%);
-    color: #555;
-    background: none;
-    border: none;
-    font-family: Lato;
-    font-size: 20px;
-    text-transform: uppercase;
-    cursor: pointer;
-    font-weight: 300;
-    transition: background-color 0.3s, color 0.3s;
+ul {
+    padding: 20px;
 }
 
 button:hover { font-weight: 600; }
@@ -159,7 +147,25 @@ i {
     transition: margin 0.3s;
 }
 
-.btn-new { top: 45px;}
+.btn-new,
+.btn-roll,
+.btn-hold {
+    position: absolute;
+    width: 200px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #555;
+    background: none;
+    border: none;
+    font-family: Lato;
+    font-size: 20px;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: 300;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-new { top: 70px;}
 .btn-roll { top: 403px;}
 .btn-hold { top: 467px;}
 
@@ -170,6 +176,21 @@ i {
     transform: translateX(-50%);
     height: 100px;
     box-shadow: 0px 10px 60px rgba(0, 0, 0, 0.10);
+}
+
+#reglas {
+    position: absolute;
+    width: 200px;
+    left: 50%;
+    font-family: Lato;
+    font-size: 16px;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: 300;
+    transition: background-color 0.3s, color 0.3s;
+    transform: translateX(-50%);
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
 }
 
 .winner { background-color: #f7f7f7; }
