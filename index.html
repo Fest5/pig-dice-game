@@ -4,7 +4,9 @@
         <meta charset="UTF-8">
         <link href="https://fonts.googleapis.com/css?family=Lato:100,300,600" rel="stylesheet" type="text/css">
         <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
         <link type="text/css" rel="stylesheet" href="css/style.css">
+        
         
         <title>Pig Game</title>
     </head>
@@ -12,7 +14,7 @@
     <body>
         <div class="wrapper clearfix">
             <div class="player-0-panel active">
-                <div class="player-name" id="name-0">Player 1</div>
+                <div class="player-name" id="name-0">Jugador 1</div>
                 <div class="player-score" id="score-0">0</div>
                 <div class="player-current-box">
                     <div class="player-current-label">Current</div>
@@ -21,7 +23,7 @@
             </div>
             
             <div class="player-1-panel">
-                <div class="player-name" id="name-1">Player 2</div>
+                <div class="player-name" id="name-1">Jugador 2</div>
                 <div class="player-score" id="score-1">0</div>
                 <div class="player-current-box">
                     <div class="player-current-label">Current</div>
@@ -29,16 +31,45 @@
                 </div>
             </div>
             
-            <button class="btn-new"><i class="ion-ios-plus-outline"></i>New game</button>
-            <button class="btn-roll"><i class="ion-ios-loop"></i>Roll dice</button>
-            <button class="btn-hold"><i class="ion-ios-download-outline"></i>Hold</button>
+            <button class="btn-new"><i class="ion-ios-plus-outline"></i>Nueva partida</button>
+            <button class="btn-roll"><i class="ion-ios-loop"></i>Tirar dado</button>
+            <button class="btn-hold"><i class="ion-ios-download-outline"></i>Guardar</button>
             
             <img src="dice-5.png" alt="Dice" class="dice">
 
+            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#rules" id="reglas">Como Jugar</button>
+
             <input type="number" placeholder="Final score" class="final-score">
         </div>
+
+        <div class="modal fade" id="rules" tabindex="-1" role="dialog" aria-labelledby="rulesLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="rulesLabel">Instrucciones y reglas del juego: </h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                    <ul>
+                        <li>El juego es en rondas y es para 2 jugadores</li>
+                        <li>En cada turno, a un jugador le toca tirar el dado y tira tantas veces como desee. Cada resultado será agregado al CURRENT score.</li>
+                        <li>Pero, si un jugador saca un 1, perderá todos los puntos de esa ronda.</li>
+                        <li>El jugador puede elegir usar el 'Guardar' para guardar sus puntos en el PUNTAJE GLOBAL. Luego de eso, será el turno del otro jugador.</li>
+                        <li>El primer jugador en llegar a los puntos definidos en la seccion de 'FINAL SCORE' gana (o en caso de no poner nada, el primero que llegue a 100).</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+                </div>
+              </div>
+            </div>
+          </div>
         
-            
+        <script src="js/jquery-3.5.0.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="js/bootstrap.bundle.min.js"></script>
         <script src="js/app.js"></script>
     </body>
 </html>

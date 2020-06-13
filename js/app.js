@@ -9,8 +9,9 @@ GAME RULES:
 
 */
 
-var scores, roundScore, activePlayer, gamePlaying;
+var scores, roundScore, activePlayer, gamePlaying, name1, name2;
 
+nombrar();
 init();
 
 document.querySelector('.btn-roll').addEventListener('click', function() {
@@ -106,13 +107,19 @@ function init() {
     document.getElementById('current-0').textContent = '0'
     document.getElementById('current-1').textContent = '0'
 
-    document.getElementById('name-0').textContent= 'Player 1'
-    document.getElementById('name-1').textContent= 'Player 2'
+    document.getElementById('name-0').textContent = name1
+    document.getElementById('name-1').textContent = name2
+
     document.querySelector('.player-0-panel').classList.remove('winner')
     document.querySelector('.player-1-panel').classList.remove('winner')
     document.querySelector('.player-0-panel').classList.remove('active')
     document.querySelector('.player-1-panel').classList.remove('active')
     document.querySelector('.player-0-panel').classList.add('active')
+}
+
+function nombrar() {
+    name1 = prompt('Ingrese el nombre del Jugador 1: ')
+    name2 = prompt('Ingrese el nombre del Jugador 2: ')
 }
 
 
